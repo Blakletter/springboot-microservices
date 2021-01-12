@@ -22,14 +22,19 @@ It is important to set up the MySql database exactly, or else Spring won't be ab
 You can import the attached [Database](test-database.sql) from the MySql workbench, and it will automatically set up the schema and tables correctly.
 
 *Note:*
-- Make sure SqlServer is running as a service. You can check this to happen automatically in the installer.
+- Make sure SqlServer is running as a service. You can check-box this to happen automatically in the installer.
 - The login for a default user is `username=root, passsword=password`
 
-The default structure for how the microservices are structured is layed out below. Any arrow you see pointing is a dependancy/communication with another service.
-If you wish to use the */getdata* service, you must also have the */getuser* service running too.
+Once you have the MySql Server and database imported, run the main method in EurekaApplication.java in the Eureka service.
+This will start the Eureka server. Then subsiquently start every other service so they can register with Eureka. 
+You can view which services are registered with Eureka by navigating to http://localhost:8761/ or whichever port you ran Eureka server on.
+Once all of the services are running, use something like postman to send and receive calls to/from the server. 
 
-*Note:*
-- Since each service uses the Eureka Server, it must be the first service running so each subsequent service can register with it. Nothing will work if the Eureka Server is not running.
+*Note: If you remove a user from MySql, it will not remove the mongoData for that user if there is any stored. You must call /savedata to save mongoData, but still, delete users with caution.
+The mongoRepository is shared between all instances of the backend, whereas your MySql database is local. There could be conflicts while trying to save data for a user that already exists.*
+
+The default structure for how the microservices are structured is below. Connecting arrows are dependencies/communications with other services.
+If you wish to use the */getdata* service, you must also have the */sql-access-layer* service running too.
 
 *Note:* You can change the port of any service by navigating to */projectname/src/main/resources/application.properties* and changing the *server.port* value.
 
