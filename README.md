@@ -72,7 +72,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 #### /authenticate
 - Method=`POST`
 - Content-Type=`application-json`
-- Body=`{"email":"your-email-here", "password":"your-password-here"}
+- Body=`{"email":"your-email-here", "password":"your-password-here"}`
 - Return:
   - HttpStatus=`200 (OK)`
   - Type=`Mono<ResponseEntity<AuthenticationResponse>>`
