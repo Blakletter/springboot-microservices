@@ -46,7 +46,7 @@ public class AuthenticationController {
             throw new Exception("Something went wrong", e);
         }
 
-        UserDetails userDetails = userDetailsService
+        MyUserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getEmail());
 
         if (userDetails==null) return (ResponseEntity<?>) ResponseEntity.notFound();

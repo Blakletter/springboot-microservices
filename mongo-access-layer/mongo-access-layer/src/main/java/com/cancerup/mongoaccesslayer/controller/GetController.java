@@ -22,27 +22,15 @@ public class GetController {
 
     @Autowired
     private MongoUserRepository mongoUserRepository;
-    @Autowired
-    private WebClient.Builder webClientBuilder;
 
     @RequestMapping(value="/getdata", method= RequestMethod.POST)
     public ResponseEntity<Object> getData(@RequestBody DataAccess dataAccess) {
-        ResponseEntity<User> response = webClientBuilder.build()
-                .post()
-                .uri("http://sql-access-layer/getuser")
-                .bodyValue(dataAccess.getEmail())
-                .retrieve()
-                .toEntity(User.class).block();
-        if (response.getStatusCode().equals(HttpStatus.OK)) {
-            DataAccess access = new DataAccess(response.getBody().getId());
-            Optional<DataPutRequest> result = mongoUserRepository.findByDataAccess(access);
+        System.out.println("Access token is " + dataAccess.getToken());
+            Optional<DataPutRequest> result = mongoUserRepository.findByDataAccess(dataAccess);
             if (result.equals(Optional.empty())) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
             return ResponseEntity.status(HttpStatus.OK).body(result.get());
-        }
-       return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(null);
-
     }
 }
 

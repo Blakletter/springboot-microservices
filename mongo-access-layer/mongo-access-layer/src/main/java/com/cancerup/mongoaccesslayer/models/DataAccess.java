@@ -1,33 +1,21 @@
 package com.cancerup.mongoaccesslayer.models;
 
 public class DataAccess {
-    private long id;
-    private String email;
-
-    public DataAccess(String email) {
-        this.email = email;
+    private String token;
+    
+    public DataAccess(String token) {
+        this.token = token;
     }
 
-    public String getEmail() {
-        return email;
+    public String getToken() {
+        return token;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public DataAccess() {
     }
 
-    public DataAccess(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

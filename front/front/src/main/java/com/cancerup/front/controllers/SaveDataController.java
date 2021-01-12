@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -33,9 +34,11 @@ public class SaveDataController {
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
         if  (username==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
+        int id = jwtUtil.extractClaim(token, claims -> claims.get("id", Integer.class));
+        String accessToken = String.valueOf(id);//new BCryptPasswordEncoder().encode(id+":"+username);
 
         DataPutRequest dataPutRequest = new DataPutRequest();
-        dataPutRequest.setDataAccess(new DataAccess(username));
+        dataPutRequest.setDataAccess(new DataAccess(accessToken));
         if (data==null) {
             //Construct the data we want to save (assume none has been passed)
             Tasks tasks = new Tasks();

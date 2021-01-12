@@ -4,33 +4,21 @@ import org.springframework.http.ResponseEntity;
 import reactor.core.publisher.Mono;
 
 public class DataAccess {
-    private long id;
-    private String email;
+    private String token;
 
-    public DataAccess(String email) {
-        this.email = email;
+    public DataAccess(String token) {
+        this.token = token;
     }
 
-    public String getEmail() {
-        return email;
+    public String getToken() {
+        return token;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public DataAccess() {
     }
 
-    public DataAccess(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

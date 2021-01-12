@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -28,7 +29,9 @@ public class GetDataController {
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
         if  (username==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
-        DataAccess dataAccess = new DataAccess(username);
+        int id = jwtUtil.extractClaim(token, claims -> claims.get("id", Integer.class));
+        String accessToken = String.valueOf(id);//new BCryptPasswordEncoder().encode(id+":"+username).;
+        DataAccess dataAccess = new DataAccess(accessToken);
         return webClientBuilder.build()
                 .post()
                 .uri("http://mongo-access-layer/getdata")

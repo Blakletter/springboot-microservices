@@ -21,30 +21,12 @@ public class SaveController {
     @Autowired
     private MongoUserRepository mongoUserRepository;
 
-    @Autowired
-    private WebClient.Builder webClientBuilder;
-
     @RequestMapping(value="/savedata", method= RequestMethod.POST)
     public ResponseEntity<Void> saveData(@RequestBody DataPutRequest dataPutRequest) {
-        //In the future, embed the user id in the jwt token so that we don't have to make an extra call
-        //This is an Async save, so if we get the request
-        // we assume that the sql-access-layer service is running (no error checking, which is an issue)
-        ResponseEntity<User> response = webClientBuilder.build()
-                .post()
-                .uri("http://sql-access-layer/getuser")
-                .bodyValue(dataPutRequest.getDataAccess().getEmail())
-                .retrieve()
-                .toEntity(User.class).block();
-        if (response.getStatusCode().equals(HttpStatus.OK)) {
-            User user = response.getBody();
-            DataPutRequest data = new DataPutRequest();
-            data.setData(dataPutRequest.getData());
-            data.setDataAccess(new DataAccess(user.getId()));
-            DataPutRequest saved = mongoUserRepository.save(data);
-            if (saved==null) return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-            return ResponseEntity.status(HttpStatus.CREATED).body(null);
-        }
-        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(null);
+        System.out.println("Access token is " + dataPutRequest.getDataAccess().getToken());
+        DataPutRequest saved = mongoUserRepository.save(dataPutRequest);
+        if (saved==null) return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 }
 
