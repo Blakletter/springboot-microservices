@@ -54,7 +54,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 #### /savedata (default data is pre-written for you)
 - Method=`POST`
 - Content-Type=`application-json`
-  
+- Header=`Authorization:jwt`
 - Return:
     - HttpStatus=`201 (CREATED)`
     - Type=`Mono<ResponseEntity<Void>>`
@@ -63,7 +63,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 #### /getdata
 - Method=`GET`
 - Content-Type=`application-json`
-  
+- Header=`Authorization:jwt`
 - Return:
     - HttpStatus=`200 (OK)`
     - Type=`Mono<ResponseEntity<Object>>`
@@ -72,7 +72,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 #### /authenticate
 - Method=`POST`
 - Content-Type=`application-json`
-
+- Body=`{"email":"your-email-here", "password":"your-password-here"}
 - Return:
   - HttpStatus=`200 (OK)`
   - Type=`Mono<ResponseEntity<AuthenticationResponse>>`
