@@ -38,7 +38,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 
 
 ### Return types / Expected Values
-####/adduser
+#### /adduser
 - Method=`POST`
 - Content-Type=`application-json`
 - Body=User.java
@@ -51,7 +51,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
     - HttpStatus=`201 (CREATED)`
     - Type=`Mono<ResponseEntity<Void>>`
 
-####/savedata (default data is pre-written for you)
+#### /savedata (default data is pre-written for you)
 - Method=`POST`
 - Content-Type=`application-json`
   
@@ -60,7 +60,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
     - Type=`Mono<ResponseEntity<Void>>`
     - Body=`{"jwt":"jwt-token"}`
 
-####/getdata
+#### /getdata
 - Method=`GET`
 - Content-Type=`application-json`
   
@@ -69,7 +69,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
     - Type=`Mono<ResponseEntity<Object>>`
     - Body=`Object`
 
-####/authenticate
+#### /authenticate
 - Method=`POST`
 - Content-Type=`application-json`
 
