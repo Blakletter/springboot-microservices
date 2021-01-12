@@ -34,7 +34,7 @@ If you wish to use the */getdata* service, you must also have the */getuser* ser
 *Note:* You can change the port of any service by navigating to */projectname/src/main/resources/application.properties* and changing the *server.port* value.
 
 
-![Architecture](MicroServiceArch.png)
+![Architecture](MicroServiceArch.jpg)
 
 
 ### Return types / Expected Values
