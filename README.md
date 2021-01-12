@@ -34,7 +34,7 @@ Once all of the services are running, use something like postman to send and rec
 The mongoRepository is shared between all instances of the backend, whereas your MySql database is local. There could be conflicts while trying to save data for a user that already exists.*
 
 The default structure for how the microservices are structured is below. Connecting arrows are dependencies/communications with other services.
-If you wish to use the */mongo-access-layer* service, you must also have the */sql-access-layer* service running too.
+
 
 *Note:* You can change the port of any service by navigating to */projectname/src/main/resources/application.properties* and changing the *server.port* value.
 
