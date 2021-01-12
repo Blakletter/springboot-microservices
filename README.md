@@ -1,5 +1,5 @@
 
-[Repository Logo](repository-open-graph-template.png)
+![Repository Logo](repository-open-graph-template.png)
 
 ### Prequisites:
 - MySql Community Server
