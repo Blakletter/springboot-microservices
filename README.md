@@ -1,5 +1,5 @@
 
-### Welcome to the CancerUp Repository!
+[Repository Logo](repository-open-graph-template.png)
 
 ### Prequisites:
 - MySql Community Server
