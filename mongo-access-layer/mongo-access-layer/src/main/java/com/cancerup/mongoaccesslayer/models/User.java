@@ -9,7 +9,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "login")
 public class User {
-    @Id private long id;
+    @Id
+    private long id;
     @NotNull
     private String email;
     @NotNull

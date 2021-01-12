@@ -2,6 +2,19 @@ package com.cancerup.mongoaccesslayer.models;
 
 public class DataAccess {
     private long id;
+    private String email;
+
+    public DataAccess(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public DataAccess() {
     }
@@ -14,7 +27,7 @@ public class DataAccess {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

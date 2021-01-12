@@ -25,15 +25,13 @@ public class GetDataController {
 
     @RequestMapping(value="/getdata", method = RequestMethod.GET)
     public Mono<ResponseEntity<Object>> getData(@RequestHeader("Authorization") String token) {
-
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
         if  (username==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
-
         DataAccess dataAccess = new DataAccess(username);
         return webClientBuilder.build()
                 .post()
-                .uri("http://get-data/getdata")
+                .uri("http://mongo-access-layer/getdata")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(dataAccess)
                 .retrieve()

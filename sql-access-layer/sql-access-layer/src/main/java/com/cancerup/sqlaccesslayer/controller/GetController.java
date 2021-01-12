@@ -18,7 +18,7 @@ public class GetController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value="/get", method= RequestMethod.POST)
+    @RequestMapping(value="/getuser", method= RequestMethod.POST)
     public ResponseEntity<User> get(@RequestBody String email) {
         Optional<User> response = userRepository.findByEmail(email);
         if (response.equals(Optional.empty())) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

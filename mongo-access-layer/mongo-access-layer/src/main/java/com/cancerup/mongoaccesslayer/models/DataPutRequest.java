@@ -1,7 +1,7 @@
 package com.cancerup.mongoaccesslayer.models;
-
 public class DataPutRequest {
-    private DataAccess dataAccess;
+
+    private com.cancerup.mongoaccesslayer.models.DataAccess dataAccess;
     private Object data;
 
     public DataPutRequest() {}

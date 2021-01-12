@@ -17,8 +17,8 @@ public class AddController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value="/add", method= RequestMethod.POST)
-    public ResponseEntity<Void> add(@RequestBody User user)  {
+    @RequestMapping(value="/adduser", method= RequestMethod.POST)
+    public ResponseEntity<Void> addUser(@RequestBody User user)  {
         if (userRepository.findByEmail(user.getEmail()).equals(Optional.empty())) {
             userRepository.save(user);
             return ResponseEntity.status(HttpStatus.CREATED).body(null);

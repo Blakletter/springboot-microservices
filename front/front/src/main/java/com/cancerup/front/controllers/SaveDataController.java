@@ -28,25 +28,27 @@ public class SaveDataController {
     @Autowired
     private MyUserDetailsService userDetailsService;
     @RequestMapping(value="/savedata", method = RequestMethod.POST)
-    public Mono<ResponseEntity<Void>> savedata(@RequestHeader("Authorization") String token, @RequestBody(required = false) Object data) {
+    public Mono<ResponseEntity<Void>> saveData(@RequestHeader("Authorization") String token, @RequestBody(required = false) Object data) {
 
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
         if  (username==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
 
-        //Construct the data we want to save (assume none has been passed)
-        Tasks tasks = new Tasks();
-        tasks.addTask(new Task("Clean up the park",  "ONGOING", LocalDate.now()));
-        tasks.addTask(new Task("Finish microservices", "COMPLETE", LocalDate.now().minusDays(3)));
-        tasks.addTask(new Task("Buy 1567 kittens", "ONGOING", LocalDate.now().plusMonths(3)));
-
-        //Now populate our PutRequest with the new data
         DataPutRequest dataPutRequest = new DataPutRequest();
         dataPutRequest.setDataAccess(new DataAccess(username));
-        dataPutRequest.setData(tasks);
+        if (data==null) {
+            //Construct the data we want to save (assume none has been passed)
+            Tasks tasks = new Tasks();
+            tasks.addTask(new Task("Clean up the park", "ONGOING", LocalDate.now()));
+            tasks.addTask(new Task("Finish microservices", "COMPLETE", LocalDate.now().minusDays(3)));
+            tasks.addTask(new Task("Buy 1567 kittens", "ONGOING", LocalDate.now().plusMonths(3)));
+            dataPutRequest.setData(tasks);
+        } else {
+            dataPutRequest.setData(data);
+        }
         return webClientBuilder.build()
                 .post()
-                .uri("http://save-data/savedata")
+                .uri("http://mongo-access-layer/savedata")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(dataPutRequest)
                 .retrieve()

@@ -22,14 +22,14 @@ public class MyUserDetailsService implements UserDetailsService {
     public MyUserDetails loadUserByUsername(String email) throws UsernameNotFoundException{
         User user = webClientBuilder.build()
                 .post()
-                .uri("http://sql-access-layer/get")
+                .uri("http://sql-access-layer/getuser")
                 .bodyValue(email)
                 .retrieve()
                 .toEntity(User.class).block().getBody();
         if (user.equals(Optional.empty())) throw new UsernameNotFoundException("Username not found");
         return new MyUserDetails(user);
     }
-
+/*
     public Mono<ResponseEntity<User>> loadUserByUsernameAsync(String email) throws UsernameNotFoundException{
         Mono<ResponseEntity<User>> user = webClientBuilder.build()
                 .post()
@@ -39,4 +39,6 @@ public class MyUserDetailsService implements UserDetailsService {
                 .toEntity(User.class);
         return user;
     }
+
+ */
 }
