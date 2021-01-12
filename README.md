@@ -17,7 +17,7 @@ This is great, because it means you can load balance and spin up multiple of the
 First, download MySql Server and Workbench (not required but recommended)
 - [MySql Installer](https://dev.mysql.com/downloads/installer/)
 
-Next download the project as a .zip or clone the repo to a place on your harddrive.
+Next download the project as a .zip or clone the repo to a directory of your choosing.
 It is important to set up the MySql database exactly, or else Spring won't be able to save or get users.
 You can import the attached [Database](test-database.sql) from the MySql workbench, and it will automatically set up the schema and tables correctly.
 
