@@ -17,6 +17,8 @@ This is great, because it means you can load balance and spin up multiple of the
 First, download MySql Server and Workbench (not required but recommended)
 - [MySql Installer](https://dev.mysql.com/downloads/installer/)
 
+You can watch a video of [how to setup and install both MySql and the rest of the backend, here.](https://www.youtube.com/watch?v=T8FWQiWWmD8)
+
 Next download the project as a .zip or clone the repo to a directory of your choosing.
 It is important to set up the MySql database exactly, or else Spring won't be able to save or get users.
 You can import the attached [Database](test-database.sql) from the MySql workbench, and it will automatically set up the schema and tables correctly.
@@ -34,7 +36,7 @@ Once all of the services are running, use something like postman to send and rec
 The mongoRepository is shared between all instances of the backend, whereas your MySql database is local. There could be conflicts while trying to save data for a user that already exists.*
 
 The default structure for how the microservices are structured is below. Connecting arrows are dependencies/communications with other services.
-If you wish to use the */mongo-access-layer* service, you must also have the */sql-access-layer* service running too.
+
 
 *Note:* You can change the port of any service by navigating to */projectname/src/main/resources/application.properties* and changing the *server.port* value.
 
