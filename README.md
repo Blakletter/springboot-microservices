@@ -1,19 +1,19 @@
 
 ![Repository Logo](repository-open-graph-template_banner.png)
 
-## Prequisites:
+# Prequisites:
 - MySql Community Server
 - MySql Workbench (Not required but recommended)
 - Java 8.0
 
 
-## Microservice architecture design
+# Microservice architecture design
 To put it simply, there is no defined definition.
 The way we are implementing it involves each service communicating through HTTP, which means each service runs on its own dedicated port.
 Each service registers with a Eureka server, and when the client requests a particular service the Eureka server can pass along the right url to the client.
 This is great, because it means you can load balance and spin up multiple of the same services, and then distribute the load across those services.
 
-## Getting started
+# Getting started
 First, download MySql Server and Workbench (not required but recommended)
 - [MySql Installer](https://dev.mysql.com/downloads/installer/)
 
@@ -44,9 +44,9 @@ The default structure for how the microservices are structured is below. Connect
 ![Architecture](MicroServiceArch.jpg)
 
 
-## Return types / Expected Values
+# Return types / Expected Values
 
-### /createuser
+## /createuser
 
 - Method:`POST`
 - Content-Type:`application-json`
@@ -58,8 +58,8 @@ The default structure for how the microservices are structured is below. Connect
 - Return:
   - HttpStatus:`201 (CREATED)`
   - Type:`ResponseEntity<Void>`
-***
-### /createdata (If not data is passed, default data is written for you)
+
+## /createdata (If not data is passed, default data is written for you)
 
 - Method:`POST`
 - Headers:
@@ -70,8 +70,8 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`201 (CREATED)`
   - Type:`ResponseEntity<Void>`
   - Body:`{"jwt":"jwt-token"}`
-***
-### /requestdata
+
+## /requestdata
 
 - Method:`GET`
 - Headers:
@@ -81,8 +81,8 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Object>`
   - Body:`Object`
-***
-### /updatedata
+
+## /updatedata
 
 - Method:`PUT`
 - Headers:
@@ -93,8 +93,8 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Void>`
   - Body:`Object`
-***
-### /deletedata
+
+## /deletedata
 
 - Method:`DELETE`
 - Headers:
@@ -104,8 +104,8 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Void>`
   - Body:`Object`
-***
-### /authenticate
+
+## /authenticate
 - Method:`POST`
 - Content-Type:`application-json`
 - Body:`{"email":"your-email-here", "password":"your-password-here"}`
