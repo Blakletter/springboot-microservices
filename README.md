@@ -45,7 +45,9 @@ The default structure for how the microservices are structured is below. Connect
 
 
 ## Return types / Expected Values
+
 ### /createuser
+
 - Method:`POST`
 - Content-Type:`application-json`
 - Body:`{
@@ -56,8 +58,9 @@ The default structure for how the microservices are structured is below. Connect
 - Return:
   - HttpStatus:`201 (CREATED)`
   - Type:`ResponseEntity<Void>`
-
+***
 ### /createdata (If not data is passed, default data is written for you)
+
 - Method:`POST`
 - Headers:
   - `Content-Type:application/json`
@@ -67,8 +70,9 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`201 (CREATED)`
   - Type:`ResponseEntity<Void>`
   - Body:`{"jwt":"jwt-token"}`
-
+***
 ### /requestdata
+
 - Method:`GET`
 - Headers:
   - `Content-Type:application/json`
@@ -77,8 +81,9 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Object>`
   - Body:`Object`
-  
+***
 ### /updatedata
+
 - Method:`PUT`
 - Headers:
   - `Content-Type:application/json`
@@ -88,8 +93,9 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Void>`
   - Body:`Object`
-  
+***
 ### /deletedata
+
 - Method:`DELETE`
 - Headers:
   - `Content-Type:application/json`
@@ -98,7 +104,7 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`200 (OK)`
   - Type:`ResponseEntity<Void>`
   - Body:`Object`
-  
+***
 ### /authenticate
 - Method:`POST`
 - Content-Type:`application-json`
