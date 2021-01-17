@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-public class AddController {
+public class CreateController {
 
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value="/adduser", method= RequestMethod.POST)
+    @RequestMapping(value="/createuser", method= RequestMethod.POST)
     public ResponseEntity<Void> addUser(@RequestBody User user)  {
         if (userRepository.findByEmail(user.getEmail()).equals(Optional.empty())) {
             userRepository.save(user);

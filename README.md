@@ -43,42 +43,65 @@ If you wish to use the */mongo-access-layer* service, you must also have the */s
 
 
 ### Return types / Expected Values
-#### /adduser
-- Method=`POST`
-- Content-Type=`application-json`
-- Body=User.java
-  `{
+#### /createuser
+- Method:`POST`
+- Content-Type:`application-json`
+- Body:`{
   "email":"email-here",
   "password":"password-here"
   }`
 
 - Return:
-  - HttpStatus=`201 (CREATED)`
-  - Type=`Mono<ResponseEntity<Void>>`
+  - HttpStatus:`201 (CREATED)`
+  - Type:`ResponseEntity<Void>`
 
-#### /savedata (default data is pre-written for you)
-- Method=`POST`
-- Content-Type=`application-json`
-- Header=`Authorization:jwt`
+#### /createdata (If not data is passed, default data is written for you)
+- Method:`POST`
+- Headers:
+  - `Content-Type:application/json`
+  - `Authorization:jwt`
+-Body: (Optional data)
 - Return:
-  - HttpStatus=`201 (CREATED)`
-  - Type=`Mono<ResponseEntity<Void>>`
-  - Body=`{"jwt":"jwt-token"}`
+  - HttpStatus:`201 (CREATED)`
+  - Type:`ResponseEntity<Void>`
+  - Body:`{"jwt":"jwt-token"}`
 
-#### /getdata
-- Method=`GET`
-- Content-Type=`application-json`
-- Header=`Authorization:jwt`
+#### /requestdata
+- Method:`GET`
+- Headers:
+  - `Content-Type:application/json`
+  - `Authorization:jwt`
 - Return:
-  - HttpStatus=`200 (OK)`
-  - Type=`Mono<ResponseEntity<Object>>`
-  - Body=`Object`
-
+  - HttpStatus:`200 (OK)`
+  - Type:`ResponseEntity<Object>`
+  - Body:`Object`
+  
+#### /updatedata
+- Method:`PUT`
+- Headers:
+  - `Content-Type:application/json`
+  - `Authorization:jwt`
+- Body: (Optional data)
+- Return:
+  - HttpStatus:`200 (OK)`
+  - Type:`ResponseEntity<Void>`
+  - Body:`Object`
+  
+#### /deletedata
+- Method:`DELETE`
+- Headers:
+  - `Content-Type:application/json`
+  - `Authorization:jwt`
+- Return:
+  - HttpStatus:`200 (OK)`
+  - Type:`ResponseEntity<Void>`
+  - Body:`Object`
+  
 #### /authenticate
-- Method=`POST`
-- Content-Type=`application-json`
-- Body=`{"email":"your-email-here", "password":"your-password-here"}`
+- Method:`POST`
+- Content-Type:`application-json`
+- Body:`{"email":"your-email-here", "password":"your-password-here"}`
 - Return:
-  - HttpStatus=`200 (OK)`
-  - Type=`Mono<ResponseEntity<AuthenticationResponse>>`
-  - Body=`{"jwt":"jwt-token"}`
+  - HttpStatus:`200 (OK)`
+  - Type:`ResponseEntity<AuthenticationResponse>`
+  - Body:`{"jwt":"jwt-token"}`

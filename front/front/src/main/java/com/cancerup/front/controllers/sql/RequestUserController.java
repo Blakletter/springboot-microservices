@@ -1,4 +1,4 @@
-package com.cancerup.front.controllers;
+package com.cancerup.front.controllers.sql;
 import com.cancerup.front.models.User;
 import com.sun.jersey.api.ConflictException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +10,16 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import reactor.core.publisher.Mono;
 
 @RestController
-public class GetUserController {
+public class RequestUserController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
 
-    @RequestMapping(value="/getuser", method= RequestMethod.POST)
+    @RequestMapping(value="/requestuser", method= RequestMethod.POST)
     public Mono<ResponseEntity<User>> get(@RequestBody User user)  {
         return webClientBuilder.build()
                 .post()
-                .uri("http://sql-access-layer/getuser")
+                .uri("http://sql-access-layer/requestuser")
                 .bodyValue(user)
                 .retrieve()
                 .toEntity(User.class);

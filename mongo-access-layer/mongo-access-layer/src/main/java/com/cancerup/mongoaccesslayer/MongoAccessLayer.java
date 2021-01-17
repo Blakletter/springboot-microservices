@@ -16,7 +16,6 @@ import reactor.netty.http.client.HttpClient;
 @EnableMongoRepositories
 @EnableDiscoveryClient
 public class MongoAccessLayer {
-
 	@Bean
 	@LoadBalanced
 	public WebClient.Builder getWebClientBuilder() {

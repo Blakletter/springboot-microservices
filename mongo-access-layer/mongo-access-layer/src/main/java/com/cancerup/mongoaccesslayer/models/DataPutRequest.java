@@ -1,9 +1,14 @@
 package com.cancerup.mongoaccesslayer.models;
-public class DataPutRequest {
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+
+@Entity
+public class DataPutRequest {
+    @Id
     private com.cancerup.mongoaccesslayer.models.DataAccess dataAccess;
     private Object data;
-
     public DataPutRequest() {}
 
     public DataPutRequest(DataAccess dataAccess, Object data) {

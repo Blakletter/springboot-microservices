@@ -1,4 +1,4 @@
-package com.cancerup.front.controllers;
+package com.cancerup.front.controllers.mongodb;
 import com.cancerup.front.models.*;
 import com.cancerup.front.services.MyUserDetails;
 import com.cancerup.front.services.MyUserDetailsService;
@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
 import java.time.LocalDate;
 
 @RestController
-public class SaveDataController {
+public class CreateDataController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
@@ -28,8 +28,8 @@ public class SaveDataController {
     private JwtUtil jwtUtil;
     @Autowired
     private MyUserDetailsService userDetailsService;
-    @RequestMapping(value="/savedata", method = RequestMethod.POST)
-    public Mono<ResponseEntity<Void>> saveData(@RequestHeader("Authorization") String token, @RequestBody(required = false) Object data) {
+    @RequestMapping(value="/createdata", method = RequestMethod.POST)
+    public Mono<ResponseEntity<Void>> createData(@RequestHeader("Authorization") String token, @RequestBody(required = false) Object data) {
 
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
@@ -51,7 +51,7 @@ public class SaveDataController {
         }
         return webClientBuilder.build()
                 .post()
-                .uri("http://mongo-access-layer/savedata")
+                .uri("http://mongo-access-layer/createdata")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(dataPutRequest)
                 .retrieve()

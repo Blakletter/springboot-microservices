@@ -1,4 +1,4 @@
-package com.cancerup.front.controllers;
+package com.cancerup.front.controllers.mongodb;
 
 import com.cancerup.front.models.DataAccess;
 import com.cancerup.front.models.DataPutRequest;
@@ -15,7 +15,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import reactor.core.publisher.Mono;
 
 @RestController
-public class GetDataController {
+public class RequestDataController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
@@ -24,8 +24,8 @@ public class GetDataController {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
-    @RequestMapping(value="/getdata", method = RequestMethod.GET)
-    public Mono<ResponseEntity<Object>> getData(@RequestHeader("Authorization") String token) {
+    @RequestMapping(value="/requestdata", method = RequestMethod.GET)
+    public Mono<ResponseEntity<Object>> requestData(@RequestHeader("Authorization") String token) {
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
         String username = jwtUtil.extractUsername(token);
         if  (username==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
@@ -34,7 +34,7 @@ public class GetDataController {
         DataAccess dataAccess = new DataAccess(accessToken);
         return webClientBuilder.build()
                 .post()
-                .uri("http://mongo-access-layer/getdata")
+                .uri("http://mongo-access-layer/requestdata")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(dataAccess)
                 .retrieve()

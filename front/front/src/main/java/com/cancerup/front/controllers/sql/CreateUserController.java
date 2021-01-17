@@ -1,4 +1,4 @@
-package com.cancerup.front.controllers;
+package com.cancerup.front.controllers.sql;
 import com.cancerup.front.models.User;
 import com.netflix.ribbon.proxy.annotation.Http;
 import com.sun.jersey.api.ConflictException;
@@ -16,18 +16,18 @@ import reactor.core.publisher.Mono;
 import java.util.function.Supplier;
 
 @RestController
-public class AddUserController {
+public class CreateUserController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
 
-    @RequestMapping(value="/adduser", method = RequestMethod.POST)
-    public Mono<ResponseEntity<Void>> addUser(@RequestBody User user) throws ConflictException {
+    @RequestMapping(value="/createuser", method = RequestMethod.POST)
+    public Mono<ResponseEntity<Void>> createUser(@RequestBody User user) throws ConflictException {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 
             return webClientBuilder.build()
                     .post()
-                    .uri("http://sql-access-layer/adduser")
+                    .uri("http://sql-access-layer/createuser")
                     .contentType(MediaType.APPLICATION_JSON)
                     .bodyValue(user)
                     .retrieve()

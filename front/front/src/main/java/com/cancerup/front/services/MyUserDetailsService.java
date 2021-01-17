@@ -22,7 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
     public MyUserDetails loadUserByUsername(String email) throws UsernameNotFoundException{
         User user = webClientBuilder.build()
                 .post()
-                .uri("http://sql-access-layer/getuser")
+                .uri("http://sql-access-layer/requestuser")
                 .bodyValue(email)
                 .retrieve()
                 .toEntity(User.class).block().getBody();
