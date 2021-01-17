@@ -59,7 +59,7 @@ The default structure for how the microservices are structured is below. Connect
   - HttpStatus:`201 (CREATED)`
   - Type:`ResponseEntity<Void>`
 
-## /createdata (If not data is passed, default data is written for you)
+## /createdata (If no data is passed, default data is written for you)
 
 - Method:`POST`
 - Headers:
