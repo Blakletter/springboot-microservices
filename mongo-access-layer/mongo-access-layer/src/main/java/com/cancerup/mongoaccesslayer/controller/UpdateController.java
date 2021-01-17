@@ -22,7 +22,6 @@ public class UpdateController {
 
     @RequestMapping(value="/updatedata", method= RequestMethod.PUT)
     public ResponseEntity<Void> updateData(@RequestBody DataPutRequest dataPutRequest) {
-        //Update update = new Update();
         Optional<DataPutRequest> data = mongoUserRepository.findByDataAccess(dataPutRequest.getDataAccess());
         if (data.equals(Optional.empty())) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
