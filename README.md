@@ -4,7 +4,7 @@
 # Prequisites:
 - MySql Community Server
 - MySql Workbench (Not required but recommended)
-- Java 8.0
+- Java 8, 11, or 15
 
 
 # Microservice architecture design
