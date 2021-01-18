@@ -52,7 +52,8 @@ The default structure for how the microservices are structured is below. Connect
 - Content-Type:`application-json`
 - Body:`{
   "email":"email-here",
-  "password":"password-here"
+  "password":"password-here",
+  "name":"your-name-here"
   }`
 
 - Return:
