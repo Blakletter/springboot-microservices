@@ -19,8 +19,10 @@ public class RequestDataController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
+
     @Autowired
     private JwtUtil jwtUtil;
+
     @Autowired
     private MyUserDetailsService userDetailsService;
 

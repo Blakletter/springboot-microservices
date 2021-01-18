@@ -19,10 +19,9 @@ public class RequestController {
     private UserRepository userRepository;
 
     @RequestMapping(value="/requestuser", method= RequestMethod.POST)
-    public ResponseEntity<User> getUser(@RequestBody String email) {
+    public ResponseEntity<Optional> requestUser(@RequestBody String email) {
         Optional<User> response = userRepository.findByEmail(email);
-        if (response.equals(Optional.empty())) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        return ResponseEntity.status(HttpStatus.OK).body(response.get());
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
 

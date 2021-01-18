@@ -2,17 +2,16 @@ package com.cancerup.front.controllers;
 
 import com.cancerup.front.models.AuthenticationRequest;
 import com.cancerup.front.models.AuthenticationResponse;
+import com.cancerup.front.models.User;
 import com.cancerup.front.services.MyUserDetails;
 import com.cancerup.front.services.MyUserDetailsService;
 import com.cancerup.front.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 @RestController
 public class AuthenticationController {
@@ -23,7 +22,7 @@ public class AuthenticationController {
     @Autowired
     private JwtUtil jwtTokenUtil;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/authenticate", method= RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
         if (authenticationRequest == null) return (ResponseEntity<?>) ResponseEntity.badRequest();
@@ -31,26 +30,35 @@ public class AuthenticationController {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
             );
-        } catch (BadCredentialsException e) {
-            e.printStackTrace();
-            throw new Exception("Incorrect username or password", e);
-        } catch (DisabledException e) {
-            e.printStackTrace();
-            throw new Exception("Your account is disabled");
         }
-        catch (AccountExpiredException e){
-            e.printStackTrace();;
-            throw new Exception("You credentials are expired");
-        }catch (Exception e) {
+        catch (BadCredentialsException e) {
             e.printStackTrace();
-            throw new Exception("Something went wrong", e);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
 
-        MyUserDetails userDetails = userDetailsService
+        MyUserDetails userDetails = new MyUserDetails();
+        userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getEmail());
+        /*
+        try {
 
-        if (userDetails==null) return (ResponseEntity<?>) ResponseEntity.notFound();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getCause());
+        }
+        if (userDetails.getUsername()==null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        }
+*/
         final String jwt = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
+    }
+
+    @ExceptionHandler(WebClientResponseException.class)
+    public ResponseEntity<Void> handleWebClientResponseException(WebClientResponseException ex) {
+        return ResponseEntity.status(ex.getRawStatusCode()).body(null);
     }
 }

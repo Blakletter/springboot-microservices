@@ -19,26 +19,16 @@ public class MyUserDetailsService implements UserDetailsService {
     private WebClient.Builder webClientBuilder;
 
     @Override
-    public MyUserDetails loadUserByUsername(String email) throws UsernameNotFoundException{
+    public MyUserDetails loadUserByUsername(String email){
         User user = webClientBuilder.build()
                 .post()
                 .uri("http://sql-access-layer/requestuser")
                 .bodyValue(email)
                 .retrieve()
                 .toEntity(User.class).block().getBody();
-        if (user.equals(Optional.empty())) throw new UsernameNotFoundException("Username not found");
+        if (user==null) return new MyUserDetails();
         return new MyUserDetails(user);
     }
-/*
-    public Mono<ResponseEntity<User>> loadUserByUsernameAsync(String email) throws UsernameNotFoundException{
-        Mono<ResponseEntity<User>> user = webClientBuilder.build()
-                .post()
-                .uri("http://sql-access-layer/getAsync")
-                .bodyValue(email)
-                .retrieve()
-                .toEntity(User.class);
-        return user;
-    }
 
- */
+
 }

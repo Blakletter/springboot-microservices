@@ -18,7 +18,7 @@ public class CreateController {
     private UserRepository userRepository;
 
     @RequestMapping(value="/createuser", method= RequestMethod.POST)
-    public ResponseEntity<Void> addUser(@RequestBody User user)  {
+    public ResponseEntity<Void> createUser(@RequestBody User user)  {
         if (userRepository.findByEmail(user.getEmail()).equals(Optional.empty())) {
             userRepository.save(user);
             return ResponseEntity.status(HttpStatus.CREATED).body(null);

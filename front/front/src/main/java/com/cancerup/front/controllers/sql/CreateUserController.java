@@ -20,7 +20,7 @@ public class CreateUserController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/createuser", method = RequestMethod.POST)
     public Mono<ResponseEntity<Void>> createUser(@RequestBody User user) throws ConflictException {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));

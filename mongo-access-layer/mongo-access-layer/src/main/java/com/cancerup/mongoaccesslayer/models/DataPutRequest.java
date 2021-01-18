@@ -6,8 +6,9 @@ import javax.persistence.Entity;
 
 @Entity
 public class DataPutRequest {
+
     @Id
-    private com.cancerup.mongoaccesslayer.models.DataAccess dataAccess;
+    private DataAccess dataAccess;
     private Object data;
     public DataPutRequest() {}
 

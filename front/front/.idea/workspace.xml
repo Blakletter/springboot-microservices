@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../mongo-access-layer/mongo-access-layer/src/main/java/com/cancerup/mongoaccesslayer/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mongo-access-layer/mongo-access-layer/src/main/java/com/cancerup/mongoaccesslayer/controller/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/FrontService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/FrontService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/SecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/mongodb/CreateDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/mongodb/CreateDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/mongodb/RequestDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/mongodb/RequestDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/RequestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/RequestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/services/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/services/MyUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/FrontService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/FrontService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/SecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/SecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/mongodb/CreateDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/mongodb/CreateDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/mongodb/RequestDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/mongodb/RequestDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/CreateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/RequestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/RequestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/services/MyUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mongo-access-layer/mongo-access-layer/src/main/java/com/cancerup/mongoaccesslayer/models/DataPutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mongo-access-layer/mongo-access-layer/src/main/java/com/cancerup/mongoaccesslayer/models/DataPutRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/CreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/CreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/RequestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -88,5 +107,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.security.authentication.BadCredentialsException" package="org.springframework.security.authentication" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

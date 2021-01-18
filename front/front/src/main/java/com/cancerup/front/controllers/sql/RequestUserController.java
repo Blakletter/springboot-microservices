@@ -14,7 +14,7 @@ public class RequestUserController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/requestuser", method= RequestMethod.POST)
     public Mono<ResponseEntity<User>> get(@RequestBody User user)  {
         return webClientBuilder.build()

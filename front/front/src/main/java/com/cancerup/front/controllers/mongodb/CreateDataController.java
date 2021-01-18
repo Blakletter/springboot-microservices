@@ -28,6 +28,7 @@ public class CreateDataController {
     private JwtUtil jwtUtil;
     @Autowired
     private MyUserDetailsService userDetailsService;
+
     @RequestMapping(value="/createdata", method = RequestMethod.POST)
     public Mono<ResponseEntity<Void>> createData(@RequestHeader("Authorization") String token, @RequestBody(required = false) Object data) {
 
