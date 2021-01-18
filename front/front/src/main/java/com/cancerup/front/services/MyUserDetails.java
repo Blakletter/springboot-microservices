@@ -15,6 +15,7 @@ public class MyUserDetails implements UserDetails {
     private long id;
     private String email;
     private String password;
+    private String name;
     private boolean isAccountNonExpired;
     private boolean isAccountNonLocked;
     private boolean isCredentialsNonExpired;
@@ -26,6 +27,7 @@ public class MyUserDetails implements UserDetails {
         this.id = user.getId();
         this.email = user.getEmail();
         this.password = user.getPassword();
+        this.name = user.getName();
         this.isAccountNonExpired=user.isAccountExpired();
         this.isAccountNonLocked=user.isAccountLocked();
         this.isCredentialsNonExpired=user.isCredentialsExpired();
@@ -36,6 +38,14 @@ public class MyUserDetails implements UserDetails {
     }
 
     public MyUserDetails() {}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public long getId() {
         return id;

@@ -1,16 +1,24 @@
 package com.cancerup.front.models;
 
 
-
 public class User {
     private long id;
     private String email;
     private String password;
+    private String name;
     private String roles = "USER";
     private boolean accountExpired = false;
     private boolean accountLocked = false;
     private boolean accountEnabled = false;
     private boolean credentialsExpired = false;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public boolean isAccountExpired() {
         return accountExpired;

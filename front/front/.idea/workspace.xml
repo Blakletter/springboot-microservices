@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="" />
+    <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/RequestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/controllers/sql/RequestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/services/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/services/MyUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/front/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/front/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/RequestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/front/controllers/sql/RequestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

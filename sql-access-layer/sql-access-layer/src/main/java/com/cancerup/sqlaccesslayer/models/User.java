@@ -14,6 +14,8 @@ public class User {
     @NotNull
     private String password;
     @NotNull
+    private String name;
+    @NotNull
     private String roles = "USER";
     private boolean accountExpired = false;
     private boolean accountLocked = false;
@@ -52,9 +54,18 @@ public class User {
         this.credentialsExpired = credentialsExpired;
     }
 
-    public User(String email, String password, String roles) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public User(String email, String password, String name, String roles) {
         this.email = email;
         this.password = password;
+        this.name = name;
         this.roles = roles;
     }
 
