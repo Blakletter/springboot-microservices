@@ -1,3 +1,5 @@
 
 front/front/.idea/workspace.xml
 *.xml
+*.json
+*.prefs
