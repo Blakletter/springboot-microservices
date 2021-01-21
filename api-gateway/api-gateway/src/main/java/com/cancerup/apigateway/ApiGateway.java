@@ -14,7 +14,7 @@ import reactor.netty.http.client.HttpClient;
 
 
 
-@SpringBootApplication(scanBasePackages= {"com.cancerup.front"})
+@SpringBootApplication(scanBasePackages= {"com.cancerup.apigateway"})
 @EnableDiscoveryClient
 public class ApiGateway {
 

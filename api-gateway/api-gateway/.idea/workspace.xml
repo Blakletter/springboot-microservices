@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/apigateway.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/ApiGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/ApiGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eureka-server/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../eureka-server/eureka-server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +43,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -45,9 +53,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="FrontService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cancerup.front.FrontService" />
-      <module name="jwt-jpa-security" />
+    <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.cancerup.apigateway.ApiGateway" />
+      <module name="apigateway" />
+      <selectedOptions>
+        <option name="environmentVariables" visible="false" />
+      </selectedOptions>
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.cancerup.front.*" />
@@ -60,7 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FrontService" />
+        <item itemvalue="Application.ApiGateway" />
       </list>
     </recent_temporary>
   </component>
