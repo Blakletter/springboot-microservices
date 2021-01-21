@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../springboot-microservices/eureka/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-microservices/front/front/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-microservices/mongo-access-layer/mongo-access-layer/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-microservices/sql-access-layer/sql-access-layer/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-microservices/api-gateway/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-microservices/eureka-server/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../api-gateway/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../eureka-server/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../mongo-access-layer/mongo-access-layer/pom.xml" />
+        <option value="$PROJECT_DIR$/../sql-access-layer/sql-access-layer/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="openjdk-15" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
