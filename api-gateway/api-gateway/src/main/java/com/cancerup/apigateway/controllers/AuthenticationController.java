@@ -5,6 +5,7 @@ import com.cancerup.apigateway.models.AuthenticationResponse;
 import com.cancerup.apigateway.services.MyUserDetails;
 import com.cancerup.apigateway.services.MyUserDetailsService;
 import com.cancerup.apigateway.util.JwtUtil;
+import com.netflix.ribbon.proxy.annotation.Http;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,22 +39,11 @@ public class AuthenticationController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
 
-        MyUserDetails userDetails = new MyUserDetails();
-        userDetails = userDetailsService
+        MyUserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getEmail());
-        /*
-        try {
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getCause());
-        }
-        if (userDetails.getUsername()==null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-        }
-*/
         final String jwt = jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        return ResponseEntity.status(HttpStatus.OK).body(new AuthenticationResponse(jwt, userDetails.getName()));
     }
 
     @ExceptionHandler(WebClientResponseException.class)

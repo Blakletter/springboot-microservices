@@ -24,6 +24,7 @@ public class RequestDataController {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
+    @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
     @RequestMapping(value="/requestdata", method = RequestMethod.GET)
     public Mono<ResponseEntity<Object>> requestData(@RequestHeader("Authorization") String token) {
         if (token==null) return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null));
