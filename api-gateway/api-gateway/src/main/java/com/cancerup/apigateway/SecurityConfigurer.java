@@ -57,7 +57,7 @@ public class SecurityConfigurer  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable().cors().and()
-                .authorizeRequests().antMatchers("/createuser", "/authenticate").permitAll()
+                .authorizeRequests().antMatchers("/createuser", "/authenticate", "/createcontact").permitAll()
                 .and().authorizeRequests().requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
