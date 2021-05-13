@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" afterDir="false" />
@@ -20,6 +21,25 @@
       <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/CreateController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/RequestController.java" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/ApiGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/ApiGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/mongodb/RequestDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/mongodb/RequestDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/filters/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/filters/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/models/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/models/AuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/RequestDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/RequestDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/filters/JwtRequestFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/filters/JwtRequestFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" afterDir="false" />
+>>>>>>> parent of efa93d8 (can_send_requests)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +69,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../eureka-server/eureka-server/pom.xml" />
+=======
+>>>>>>> parent of efa93d8 (can_send_requests)
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\springboot-microservices\api-gateway\api-gateway\src\main\java\com\cancerup\apigateway\models" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cancerup.front.controllers.mongodb" />
       <recent name="com.cancerup.front.controllers" />
