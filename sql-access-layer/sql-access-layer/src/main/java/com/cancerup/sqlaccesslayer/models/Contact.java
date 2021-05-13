@@ -1,16 +1,34 @@
-package com.cancerup.apigateway.models;
+package com.cancerup.sqlaccesslayer.models;
 
+import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "contacts")
 public class Contact {
+    @Id
     private long id;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
+    @Nullable
     private String position;
+    @Nullable
     private String industry;
+    @Nullable
     private long phoneNumber;
+    @Nullable
     private String website;
+    @Nullable
     private String city;
+    @Nullable
     private String state;
+    @Nullable
     private String zipcode;
+    @Nullable
     private String email;
 
     public Contact(String firstName, String lastName, String position, String industry, long phoneNumber, String website, String city, String state, String zipcode, String email) {
@@ -73,13 +91,15 @@ public class Contact {
         return zipcode;
     }
 
-    public String getEmail() { return email;}
+    public String getEmail() {
+        return email;
+    }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirst_name(String firstName) {
         this.firstName = firstName;
     }
 
@@ -117,22 +137,5 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Contact{" +
-                "id=" + id +
-                ", first_name='" + firstName + '\'' +
-                ", last_name='" + lastName + '\'' +
-                ", position='" + position + '\'' +
-                ", industry='" + industry + '\'' +
-                ", phone_number=" + phoneNumber +
-                ", website='" + website + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipcode='" + zipcode + '\'' +
-                ", email='" + email + '\'' +
-                '}';
     }
 }

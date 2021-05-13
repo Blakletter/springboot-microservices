@@ -1,6 +1,5 @@
 package com.cancerup.sqlaccesslayer;
 
-
 import com.cancerup.sqlaccesslayer.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
