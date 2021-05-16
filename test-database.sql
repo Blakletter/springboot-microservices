@@ -94,6 +94,7 @@ CREATE TABLE `events` (
   `event_description` varchar(255) NOT NULL,
   `event_start_time` varchar(255) NOT NULL,
   `event_end_time` varchar(255) NOT NULL,
+  `event_date` varchar(255) NOT NULL,
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
