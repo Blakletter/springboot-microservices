@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cd1a7da-cc8c-4e55-8b0b-1a3b99774955" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/models/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/models/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/models/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/CreateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/RequestController.java" beforeDir="false" />
-    </list>
+    <list default="true" id="8cd1a7da-cc8c-4e55-8b0b-1a3b99774955" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,8 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sql-access-layer/sql-access-layer/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -47,17 +30,5 @@
       <updated>1617151002903</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

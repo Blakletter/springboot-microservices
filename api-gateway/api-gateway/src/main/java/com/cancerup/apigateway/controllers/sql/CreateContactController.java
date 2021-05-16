@@ -17,14 +17,15 @@ public class CreateContactController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/createcontact", method = RequestMethod.POST)
-    public Mono<ResponseEntity<Void>> createContact(@RequestBody Contact contact) throws ConflictException {
-        return webClientBuilder.build()
-                .post()
-                .uri("http://sql-access-layer/createcontact")
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(contact)
-                .retrieve()
-                .toEntity(Void.class);
+    public Contact createUser(@RequestBody Contact contact) throws ConflictException {
+          return contact;
+//        return webClientBuilder.build()
+//                .post()
+//                .uri("http://sql-access-layer/createcontact")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .bodyValue(contact)
+//                .retrieve()
+//                .toEntity(Void.class);
     }
 
     @ExceptionHandler(WebClientResponseException.class)

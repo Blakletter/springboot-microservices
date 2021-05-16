@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" afterDir="false" />
@@ -40,6 +41,14 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" afterDir="false" />
 >>>>>>> parent of efa93d8 (can_send_requests)
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/RequestContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/resources/application.properties" afterDir="false" />
+>>>>>>> parent of 4a13cb5 (Merge pull request #2 from Blakletter/jason_jiang_branch)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +79,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../eureka-server/eureka-server/pom.xml" />
 =======
 >>>>>>> parent of efa93d8 (can_send_requests)
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+>>>>>>> parent of 4a13cb5 (Merge pull request #2 from Blakletter/jason_jiang_branch)
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
