@@ -1,7 +1,6 @@
 package com.cancerup.sqlaccesslayer;
 
 import com.cancerup.sqlaccesslayer.models.Event;
-import com.cancerup.sqlaccesslayer.models.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
