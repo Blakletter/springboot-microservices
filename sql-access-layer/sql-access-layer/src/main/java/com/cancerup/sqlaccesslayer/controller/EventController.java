@@ -1,5 +1,4 @@
 package com.cancerup.sqlaccesslayer.controller;
-import com.cancerup.sqlaccesslayer.ContactRepository;
 import com.cancerup.sqlaccesslayer.EventRepository;
 import com.cancerup.sqlaccesslayer.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
