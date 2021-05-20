@@ -5,7 +5,6 @@ import com.cancerup.apigateway.models.AuthenticationResponse;
 import com.cancerup.apigateway.services.MyUserDetails;
 import com.cancerup.apigateway.services.MyUserDetailsService;
 import com.cancerup.apigateway.util.JwtUtil;
-import com.netflix.ribbon.proxy.annotation.Http;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +20,15 @@ public class AuthenticationController {
     private MyUserDetailsService userDetailsService;
     @Autowired
     private JwtUtil jwtTokenUtil;
+
+
+    @CrossOrigin(origins="http://localhost:3000")
+    @RequestMapping(value="/checkauthenticated", method= RequestMethod.POST)
+    public ResponseEntity<AuthenticationResponse> checkAuthenticated(@RequestHeader("Authorization") String token) {
+        String name = jwtTokenUtil.extractClaim(token, claims -> claims.get("name", String.class));
+        return ResponseEntity.status(HttpStatus.OK).body(new AuthenticationResponse(null, name));
+    }
+
 
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/authenticate", method= RequestMethod.POST)
