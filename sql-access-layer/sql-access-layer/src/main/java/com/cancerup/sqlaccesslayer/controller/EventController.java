@@ -19,7 +19,7 @@ public class EventController {
 
     @RequestMapping(value="/createevent", method= RequestMethod.POST)
     public ResponseEntity<Void> createEvent(@RequestBody Event event)  {
-        if (event.userId && event.eventName) //If either of these two things are null it will fail
+        if (event.getUserId() && event.getEventName() ) //If either of these two things are null it will fail
             eventRepository.save(event);
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
         }
