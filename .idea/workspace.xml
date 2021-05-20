@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cd1a7da-cc8c-4e55-8b0b-1a3b99774955" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/models/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/models/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/target/classes/com/cancerup/apigateway/models/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/CreateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/RequestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/RequestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/cancerup/apigateway/controllers/sql/RequestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/ContactRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

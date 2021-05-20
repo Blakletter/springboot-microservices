@@ -27,6 +27,37 @@ public class CreateContactController {
                 .toEntity(Void.class);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/requestcontact")
+    public Mono<ResponseEntity<Contact>> get(@RequestBody Contact contact)  {
+        return webClientBuilder.build()
+                .post()
+                .uri("http://sql-access-layer/requestcontact")
+                .bodyValue(contact)
+                .retrieve()
+                .toEntity(Contact.class);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/contact")
+    public Flux<Contact> all() {
+        return webClientBuilder.build()
+                .get()
+                .uri("http://sql-access-layer/contact")
+                .retrieve()
+                .bodyToFlux(Contact.class);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @DeleteMapping("/deletecontact")
+    public Mono<ResponseEntity<Long>> delete(@RequestParam ("firstname") String firstName)  {
+        return webClientBuilder.build()
+                .delete()
+                .uri("http://sql-access-layer/deletecontact?firstname="+firstName)
+                .retrieve()
+                .toEntity(Long.class);
+    }
+
     @ExceptionHandler(WebClientResponseException.class)
     public ResponseEntity<Void> handleWebClientResponseException(WebClientResponseException ex) {
         return ResponseEntity.status(ex.getRawStatusCode()).body(null);

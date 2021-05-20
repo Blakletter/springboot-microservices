@@ -14,7 +14,20 @@ public class RequestUserController {
     private WebClient.Builder webClientBuilder;
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @RequestMapping(value="/requestuser", method= RequestMethod.POST)
+    @PostMapping(value="/createuser")
+    public Mono<ResponseEntity<Void>> createUser(@RequestBody User user) throws ConflictException {
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        return webClientBuilder.build()
+                .post()
+                .uri("http://sql-access-layer/createuser")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(user)
+                .retrieve()
+                .toEntity(Void.class);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/requestuser")
     public Mono<ResponseEntity<User>> get(@RequestBody User user)  {
         return webClientBuilder.build()
                 .post()
