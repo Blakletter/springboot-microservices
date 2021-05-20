@@ -24,7 +24,7 @@ public class Contact {
         this.state = state;
         this.zipcode = zipcode;
     }
-
+    public Contact() {}
     public long getId() {
         return id;
     }
