@@ -16,7 +16,7 @@ public class CreateEventController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value="/createevent", method = RequestMethod.POST)
-    public Mono<ResponseEntity<Void>> createUser(@RequestBody Event event) throws ConflictException {
+    public Mono<ResponseEntity<Void>> createEvent(@RequestBody Event event) throws ConflictException {
 
         return webClientBuilder.build()
                 .post()
