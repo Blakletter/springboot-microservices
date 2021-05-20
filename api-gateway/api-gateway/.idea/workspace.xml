@@ -4,12 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateContactController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/RequestContactController.java" afterDir="false" />
+    <list default="true" id="dab2e392-3d94-429e-b8fc-8874903677a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/SecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/controllers/sql/CreateEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cancerup/apigateway/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/ApiGateway.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/SecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationCheckController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationCheckController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/CreateDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/CreateDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/DeleteDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/DeleteDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/RequestDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/RequestDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/UpdateDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/mongodb/UpdateDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateContactController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/CreateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/RequestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/controllers/sql/RequestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/filters/JwtRequestFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/filters/JwtRequestFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/AuthenticationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/DataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/DataAccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/DataPutRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/DataPutRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Tasks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/Tasks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/services/MyUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/services/MyUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/services/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/services/MyUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cancerup/apigateway/util/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cancerup/apigateway/ApiGatewayTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cancerup/apigateway/ApiGatewayTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/.idea/sql-access-layer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/.idea/sql-access-layer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/java/com/cancerup/sqlaccesslayer/models/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql-access-layer/sql-access-layer/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,43 +55,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1mwzJZ48lXyPQtWdwslq4Qi2b3v" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1slhuzWP7vTyKwQbzvpkMCg18sJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\springboot-microservices\api-gateway\api-gateway\src\main\java\com\cancerup\apigateway\models" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cancerup.front.controllers.mongodb" />
-      <recent name="com.cancerup.front.controllers" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.cancerup.apigateway.ApiGateway" />
       <module name="apigateway" />
-      <selectedOptions>
-        <option name="environmentVariables" visible="false" />
-      </selectedOptions>
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cancerup.front.*" />
+          <option name="PATTERN" value="com.cancerup.apigateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,37 +87,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5b6159bd-9480-4016-be7c-bba6a802ecc6" name="Default Changelist" comment="" />
-      <created>1610419373807</created>
+      <changelist id="dab2e392-3d94-429e-b8fc-8874903677a0" name="Default Changelist" comment="" />
+      <created>1621453320294</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1610419373807</updated>
+      <updated>1621453320294</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.springframework.security.authentication.BadCredentialsException" package="org.springframework.security.authentication" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
