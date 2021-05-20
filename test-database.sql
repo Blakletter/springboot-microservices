@@ -88,13 +88,13 @@ DROP TABLE IF EXISTS `events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `events` (
-  `event_id` int NOT NULL,
+  `event_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `event_name` varchar(100) NOT NULL,
-  `event_description` varchar(255) NOT NULL,
-  `event_start_time` varchar(255) NOT NULL,
-  `event_end_time` varchar(255) NOT NULL,
-  `event_date` varchar(255) NOT NULL,
+  `event_description` varchar(255) NULL,
+  `event_start_time` TIME NULL,
+  `event_end_time` TIME NULL,
+  `event_date` DATE NOT NULL,
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
