@@ -2,10 +2,14 @@ package com.cancerup.sqlaccesslayer;
 
 import com.cancerup.sqlaccesslayer.models.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
     Optional<Event> findByUserId(long userId); // look into the Optional<Contact> more as with this we'd primarily want to return a list of events
-    Optional<Event> findByEventId(long eventId);
+
+    @Query("select u from Event u where u.eventId = :eventId")
+    Optional<Event> findByEventId(@Param("eventId") long eventId);
 }
