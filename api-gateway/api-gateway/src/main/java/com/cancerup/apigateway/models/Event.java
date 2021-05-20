@@ -13,20 +13,26 @@ public class Event{
     private LocalTime eventStartTime;
     private LocalTime eventEndTime;
 
-    public Event(long eventId,
-                 long userId,
+    public Event(long userId,
                  String eventName,
                  String eventDescription,
                  LocalDate eventDate,
                  LocalTime eventStartTime,
                  LocalTime eventEndTime) {
-        this.eventId = eventId;
         this.userId = userId;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.eventDate = eventDate;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
+    }
+
+    public Event(long userId,
+                 String eventName,
+                 LocalDate eventDate){
+        this.userId = userId;
+        this.eventName = eventName;
+        this.eventDate = eventDate;
     }
 
     public Event(){ }
