@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -19,7 +20,7 @@ public class EventController {
 
     @RequestMapping(value="/createevent", method= RequestMethod.POST)
     public ResponseEntity<Void> createEvent(@RequestBody Event event)  {
-        if (event.getUserId() && event.getEventName() ) //If either of these two things are null it will fail
+        if ((!Objects.isNull(event.getUserId())) && (event.getEventName()!=null) ){ //If either of these two things are null it will fail
             eventRepository.save(event);
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
         }
