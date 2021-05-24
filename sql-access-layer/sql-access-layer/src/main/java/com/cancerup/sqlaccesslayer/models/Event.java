@@ -55,6 +55,7 @@ public class Event {
     }
 
     public void setEventId(long eventId) {
+
         this.eventId = eventId;
     }
 
@@ -74,9 +75,7 @@ public class Event {
         this.eventName = eventName;
     }
 
-    public String getEventDescription() {
-        return eventDescription;
-    }
+    public String getEventDescription() { return eventDescription; }
 
     public void setEventDescription(String eventDescription) {
         this.eventDescription = eventDescription;
@@ -89,6 +88,8 @@ public class Event {
     public void setEventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
     }
+
+    public void setEventDate(String date) { this.eventDate = LocalDate.parse(date); }
 
     public LocalTime getEventStartTime() {
         return eventStartTime;

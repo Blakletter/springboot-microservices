@@ -18,40 +18,42 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
 	</properties>
+		<dependencies>
 
-	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<version>2.2.4.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<version>2.2.5.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>2.4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+			</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-jpa</artifactId>
+
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-junit-jupiter</artifactId>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
 	<build>
 		<plugins>
 			<plugin>
