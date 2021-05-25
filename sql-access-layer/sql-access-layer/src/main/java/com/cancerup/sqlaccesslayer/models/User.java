@@ -62,6 +62,10 @@ public class User {
         this.name = name;
     }
 
+    public User(int id) {
+        this.id = id;
+    }
+
     public User(String email, String password, String name, String roles) {
         this.email = email;
         this.password = password;
@@ -75,6 +79,7 @@ public class User {
     }
 
     public User() {}
+
 
     public void addRole(String role) {
         if (this.roles.equals("")) this.roles=role;

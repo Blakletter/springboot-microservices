@@ -1,4 +1,5 @@
 package com.cancerup.sqlaccesslayer;
+import com.cancerup.sqlaccesslayer.models.Contact;
 import com.cancerup.sqlaccesslayer.models.Event;
 import com.cancerup.sqlaccesslayer.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,11 +44,14 @@ public class SqlAccessLayerTests {
 	User user = new User("test@gmail.com", "password", "Test", "USER");
 	//This is our mock event we are going to use
 	Event event = new Event(2, "Test", LocalDate.now());
+	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
+	Contact contact = new Contact(new User(44), "Donald", "Duck");
+
 
 	//CONTACT TESTS
 	@Test
 	@Order(2)
-	public void testContacts() throws Exception {
+	public void testCreateUser() throws Exception {
 		String requestBody = new ObjectMapper().valueToTree(user).toString();
 		this.mockMvc.perform(
 				post("/createuser")
@@ -60,7 +64,7 @@ public class SqlAccessLayerTests {
 
 	@Test
 	@Order(3)
-	public void testConflictContacts() throws Exception {
+	public void testConflictedUser() throws Exception {
 		String requestBody = new ObjectMapper().valueToTree(user).toString();
 		this.mockMvc.perform(
 				post("/createuser")
@@ -71,9 +75,13 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isConflict());
 	}
 
+
+
+
+
 	@Test
 	@Order(4)
-	public void testDeleteContacts() throws Exception {
+	public void testDeleteUser() throws Exception {
 		String requestBody = new ObjectMapper().valueToTree(user).toString();
 		this.mockMvc.perform(
 				delete("/deleteuser")
@@ -86,7 +94,7 @@ public class SqlAccessLayerTests {
 
 	@Test
 	@Order(5)
-	public void testDelete404Contacts() throws Exception {
+	public void testFindUser() throws Exception {
 		this.mockMvc.perform(
 				delete("/deleteuser")
 						.param("email", user.getEmail())
@@ -96,9 +104,38 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isNotFound());
 	}
 
-	//EVENT TESTS
+
+	//EVENT CONTACTS
 	@Test
 	@Order(6)
+	public void testAddContact() throws Exception {
+		//The event
+		String requestBody = new ObjectMapper().valueToTree(contact).toString();
+		this.mockMvc.perform(
+				post("/createcontact")
+						.content(requestBody)
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isCreated());
+	}
+
+	//EVENT CONTACTS
+	@Test
+	@Order(7)
+	public void testDeleteContact() throws Exception {
+		//The event
+		this.mockMvc.perform(
+				delete("/deletecontact")
+						.param("firstname", contact.getFirstName())
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
+
+	@Test
+	@Order(8)
 	public void testEvents() throws Exception {
 		//The event
 		String requestBody = new ObjectMapper().valueToTree(event).toString();
@@ -110,6 +147,8 @@ public class SqlAccessLayerTests {
 		)
 				.andDo(print()).andExpect(status().isCreated());
 	}
+
+
 
 }
 

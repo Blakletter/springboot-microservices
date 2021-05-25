@@ -14,6 +14,12 @@ public class UsersControllers {
     @Autowired
     private UserRepository userRepository;
 
+    @RequestMapping(value="/requestuser", method= RequestMethod.POST)
+    public ResponseEntity<Optional> requestUser(@RequestBody String email) {
+        Optional<User> response = userRepository.findByEmail(email);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
     @RequestMapping(value="/createuser", method= RequestMethod.POST)
     public ResponseEntity<Void> createUser(@RequestBody User user)  {
         if (userRepository.findByEmail(user.getEmail()).equals(Optional.empty())) {
