@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -43,7 +44,7 @@ public class SqlAccessLayerTests {
 	//Here is our mock user we are going to user
 	User user = new User("test@gmail.com", "password", "Test", "USER");
 	//This is our mock event we are going to use
-	Event event = new Event(2, "Test", new java.sql.Date(System.currentTimeMillis()));
+	Event event = new Event(2, "Test", LocalDate.now().toString());
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 
@@ -139,7 +140,6 @@ public class SqlAccessLayerTests {
 	public void testEvents() throws Exception {
 		//The event
 		String requestBody = new ObjectMapper().valueToTree(event).toString();
-		//String requestBody2 = "{ \"userId\":22, \"eventName\":\"Meeting\", \"eventDate\":\"2021-05-20\" }";
 		this.mockMvc.perform(
 				post("/createevent")
 						.content(requestBody)
