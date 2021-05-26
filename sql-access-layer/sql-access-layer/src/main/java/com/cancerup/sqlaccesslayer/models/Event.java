@@ -1,9 +1,12 @@
 package com.cancerup.sqlaccesslayer.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.*;
 
@@ -19,18 +22,19 @@ public class Event {
     @Nullable
     private String eventDescription;
     @NotNull
-    private LocalDate eventDate;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date eventDate;
     @Nullable
-    private LocalTime eventStartTime;
+    private Time eventStartTime;
     @Nullable
-    private LocalTime eventEndTime;
+    private Time eventEndTime;
 
     public Event(long userId,
                  String eventName,
                  String eventDescription,
-                 LocalDate eventDate,
-                 LocalTime eventStartTime,
-                 LocalTime eventEndTime) {
+                 Date eventDate,
+                 Time eventStartTime,
+                 Time eventEndTime) {
         this.userId = userId;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
@@ -42,7 +46,7 @@ public class Event {
     // example raw JSON body for postman API /createevent :: { "userId":22, "eventName":"Meeting", "eventDate":"2021-05-20" }
     public Event(long userId,
                  String eventName,
-                 LocalDate eventDate){
+                 Date eventDate){
         this.userId = userId;
         this.eventName = eventName;
         this.eventDate = eventDate;
@@ -81,29 +85,45 @@ public class Event {
         this.eventDescription = eventDescription;
     }
 
-    public LocalDate getEventDate() {
+    @JsonFormat(pattern="yyyy-MM-dd")
+    public Date getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(LocalDate eventDate) {
+    @JsonFormat(pattern="yyyy-MM-dd")
+    public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
     }
 
-    public void setEventDate(String date) { this.eventDate = LocalDate.parse(date); }
+    @JsonFormat(pattern="yyyy-MM-dd")
+    public void setEventDate(String date) throws ParseException { this.eventDate = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(date); }
 
-    public LocalTime getEventStartTime() {
+    public Time getEventStartTime() {
         return eventStartTime;
     }
 
-    public void setEventStartTime(LocalTime eventStartTime) {
+    public void setEventStartTime(Time eventStartTime) {
         this.eventStartTime = eventStartTime;
     }
 
-    public LocalTime getEventEndTime() {
+    public Time getEventEndTime() {
         return eventEndTime;
     }
 
-    public void setEventEndTime(LocalTime eventEndTime) {
+    public void setEventEndTime(Time eventEndTime) {
         this.eventEndTime = eventEndTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", userId=" + userId +
+                ", eventName='" + eventName + '\'' +
+                ", eventDescription='" + eventDescription + '\'' +
+                ", eventDate=" + eventDate +
+                ", eventStartTime=" + eventStartTime +
+                ", eventEndTime=" + eventEndTime +
+                '}';
     }
 }
