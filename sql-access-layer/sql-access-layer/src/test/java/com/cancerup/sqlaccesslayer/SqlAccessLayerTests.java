@@ -138,12 +138,12 @@ public class SqlAccessLayerTests {
 	@Order(8)
 	public void testEvents() throws Exception {
 		//The event
-		//String requestBody = new ObjectMapper().valueToTree(event).toString();
-		String requestBody2 = "{ \"userId\":22, \"eventName\":\"Meeting\", \"eventDate\":\"2021-05-20\" }";
+		String requestBody = new ObjectMapper().valueToTree(event).toString();
+		//String requestBody2 = "{ \"userId\":22, \"eventName\":\"Meeting\", \"eventDate\":\"2021-05-20\" }";
 		this.mockMvc.perform(
 				post("/createevent")
+						.content(requestBody)
 						.contentType(MediaType.APPLICATION_JSON)
-						.content(requestBody2)
 						.accept(MediaType.APPLICATION_JSON)
 		)
 				.andDo(print()).andExpect(status().isCreated());
