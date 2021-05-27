@@ -4,11 +4,9 @@ import com.cancerup.sqlaccesslayer.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -28,8 +26,20 @@ public class EventController {
     }
 
     @RequestMapping(value="/requestevent", method= RequestMethod.POST)
-    public ResponseEntity<Optional> requestEvent(@RequestBody long eventId) {
+    public ResponseEntity<Optional> requestEvent(@RequestParam long eventId) {
         Optional<Event> response = eventRepository.findByEventId(eventId);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @RequestMapping(value="/requestevents", method= RequestMethod.POST)
+    public ResponseEntity<Optional> requestEvents(@RequestParam long userId) {
+        Optional<List<Event>> response = eventRepository.findAllByUserId(userId);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @RequestMapping(value="/deleteevents", method= RequestMethod.DELETE)
+    public ResponseEntity<Long> deleteEvents(@RequestParam long userId){
+        long response = eventRepository.deleteByUserId(userId);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
