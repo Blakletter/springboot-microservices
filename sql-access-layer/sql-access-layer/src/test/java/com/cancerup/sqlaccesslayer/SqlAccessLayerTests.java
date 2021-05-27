@@ -13,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import java.sql.Date;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -149,7 +148,29 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isCreated());
 	}
 
+	@Test
+	@Order(9)
+	public void testFindEvents() throws Exception {
+		this.mockMvc.perform(
+				post("/requestevents")
+						.param("userId", Long.toString(event.getUserId()))
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
 
+	@Test
+	@Order(10)
+	public void testDeleteEvents() throws Exception {
+		this.mockMvc.perform(
+				delete("/deleteevents")
+						.param("userId", Long.toString(event.getUserId()))
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
 
 }
 
