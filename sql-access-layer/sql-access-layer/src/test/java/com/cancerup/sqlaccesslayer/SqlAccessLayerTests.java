@@ -43,7 +43,7 @@ public class SqlAccessLayerTests {
 	//Here is our mock user we are going to user
 	User user = new User("test@gmail.com", "password", "Test", "USER");
 	//This is our mock event we are going to use
-	Event event = new Event(2, "Test", LocalDate.now());
+	Event event = new Event(2, "Test", LocalDate.now().toString());
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 
@@ -148,7 +148,29 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isCreated());
 	}
 
+	@Test
+	@Order(9)
+	public void testFindEvents() throws Exception {
+		this.mockMvc.perform(
+				post("/requestevents")
+						.param("userId", Long.toString(event.getUserId()))
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
 
+	@Test
+	@Order(10)
+	public void testDeleteEvents() throws Exception {
+		this.mockMvc.perform(
+				delete("/deleteevents")
+						.param("userId", Long.toString(event.getUserId()))
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
 
 }
 
