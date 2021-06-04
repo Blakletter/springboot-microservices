@@ -45,15 +45,22 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
         //In memory clients work for now, but we want to have multiple clients and manage it from our DB so this will not work for prod
         //For some reason it doesn't matter what client we send over, it does not work
-        
+        /*
         clients.inMemory()
                 .withClient("client")
                 .secret(bCryptPasswordEncoder.encode("secret"))
                 .authorizedGrantTypes("authorization_code", "refresh_token", "password")
                 .authorities("USER")
                 .scopes("read", "write");
-
-    //clients.jdbc(dataSource); //Try to configure a datasource to load our clients from (so we can store them in our DB)
+        */
+        //Try to configure a datasource to load our clients from (so we can store them in our DB)
+        // Stack overflow link :: https://stackoverflow.com/questions/35039656/how-to-add-a-client-using-jdbc-for-clientdetailsserviceconfigurer-in-spring
+        clients.jdbc(dataSource)
+                .withClient("client")
+                .authorizedGrantTypes("authorization_code", "refresh_token", "password")
+                .authorities("USER")
+                .scopes("read", "write")
+                .secret(bCryptPasswordEncoder.encode("secret")).and().build();
 
     }
 }
