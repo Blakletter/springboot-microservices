@@ -77,14 +77,14 @@ public class SqlAccessLayer {
 		params.put("password", password);
 		Response response = RestAssured.given().auth().preemptive()
 				.basic(clientId, "secret").and().with().params(params).when()
-				.post("http://localhost:8081/spring-security-oauth-server/oauth/token");
+				.post("http://localhost:8081/spring-security-oauth-server/oauth/token"); // next step, connect to this server
 
 		return response.jsonPath().getString("access_token");
 	}
 
 	@Test
 	public void givenDBUser_whenRevokeToken_thenAuthorized() {
-		String accessToken = obtainAccessToken("google", "test@gmail.com", "123"); // wrong password? Throws a lot of errors
+		String accessToken = obtainAccessToken("google", "test@gmail.com", "123");
 
 		Assert.assertNotNull(accessToken);
 	}
