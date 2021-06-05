@@ -55,9 +55,23 @@
 			</dependency>
 
 
+			<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+			<dependency>
+				<groupId>com.jayway.jsonpath</groupId>
+				<artifactId>json-path</artifactId>
+				<version>2.6.0</version>
+			</dependency>
 
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>rest-assured</artifactId>
+				<version>4.4.0</version>
+			</dependency>
 
-
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -67,6 +81,12 @@
 				<groupId>org.springframework.security.oauth.boot</groupId>
 				<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 
+			</dependency>
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>RELEASE</version>
+				<scope>compile</scope>
 			</dependency>
 		</dependencies>
 	<build>
