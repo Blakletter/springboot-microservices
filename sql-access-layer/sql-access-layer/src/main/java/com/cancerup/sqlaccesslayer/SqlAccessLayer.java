@@ -2,6 +2,7 @@ package com.cancerup.sqlaccesslayer;
 
 
 import com.cancerup.sqlaccesslayer.oauth.CustomUserDetailsService;
+import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -17,8 +18,15 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+
+import com.jayway.jsonpath.JsonPath;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 //EnableAuthorizationServer provides the actual security layer to our program
 @EnableAuthorizationServer
@@ -63,7 +71,25 @@ public class SqlAccessLayer {
 		return new CustomUserDetailsService();
 	}
 
+	private String obtainAccessToken(String clientId, String username, String password) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("grant_type", "password");
+		params.put("client_id", clientId);
+		params.put("username", username);
+		params.put("password", password);
+		Response response = RestAssured.given().auth().preemptive()
+				.basic(clientId, "secret").and().with().params(params).when()
+				.post("http://localhost:8081/spring-security-oauth-server/oauth/token");
 
+		return response.jsonPath().getString("access_token");
+	}
+
+	@Test
+	public void givenDBUser_whenRevokeToken_thenAuthorized() {
+		String accessToken = obtainAccessToken("google", "test@gmail.com", "123"); // wrong password? Throws a lot of errors
+
+		Assert.assertNotNull(accessToken);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SqlAccessLayer.class, args);
