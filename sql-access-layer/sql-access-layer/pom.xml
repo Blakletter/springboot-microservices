@@ -17,7 +17,14 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
+
+		<java.version>11</java.version>
+		<rest-assured.version>4.4.0</rest-assured.version>
+		<groovy.version>3.0.7</groovy.version>
+
 	</properties>
+
+
 		<dependencies>
 
 			<dependency>
@@ -55,11 +62,17 @@
 			</dependency>
 
 
-			<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+			<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
 			<dependency>
-				<groupId>com.jayway.jsonpath</groupId>
+				<groupId>io.rest-assured</groupId>
 				<artifactId>json-path</artifactId>
-				<version>2.6.0</version>
+				<version>4.4.0</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>xml-path</artifactId>
+				<version>4.4.0</version>
 			</dependency>
 
 			<dependency>
