@@ -22,8 +22,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 
-import com.jayway.jsonpath.JsonPath;
-
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
