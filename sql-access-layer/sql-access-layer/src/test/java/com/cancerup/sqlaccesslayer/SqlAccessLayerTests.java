@@ -47,6 +47,7 @@ public class SqlAccessLayerTests {
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 
+	com.cancerup.sqlaccesslayer.models.Test myTest = new com.cancerup.sqlaccesslayer.models.Test();
 
 	//CONTACT TESTS
 	@Test
@@ -170,6 +171,30 @@ public class SqlAccessLayerTests {
 						.accept(MediaType.APPLICATION_JSON)
 		)
 				.andDo(print()).andExpect(status().isOk());
+	}
+
+	//CONTACT TESTS
+	@Test
+	@Order(11)
+	public void testAddRom() throws Exception {
+		String requestBody = new ObjectMapper().valueToTree(myTest).toString();
+		this.mockMvc.perform(
+				post("/createtest")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(requestBody)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isCreated());
+	}
+
+	@Test
+	@Order(12)
+	public void testGetRom() throws Exception {
+		this.mockMvc.perform(
+				post("/gettest")
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		).andDo(print()).andExpect(status().isOk());
 	}
 
 }
