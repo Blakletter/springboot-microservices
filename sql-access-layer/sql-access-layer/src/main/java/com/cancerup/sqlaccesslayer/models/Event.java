@@ -1,9 +1,11 @@
+// TODO :: fully implement contacts List , look into JSON URL , ...
 package com.cancerup.sqlaccesslayer.models;
 
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "events")
@@ -22,19 +24,25 @@ public class Event {
     private String eventStartTime;
     @Nullable
     private String eventEndTime;
+    @JoinTable // should be saved as EVENT_CONTACTS
+    @OneToMany
+    private List<Contact> contacts; // TODO {contacts} :: work on EVENT_CONTACT table.
+
 
     public Event(long userId,
                  String eventName,
                  String eventDescription,
                  String eventDate,
                  String eventStartTime,
-                 String eventEndTime) {
+                 String eventEndTime,
+                 List<Contact> contacts) {
         this.userId = userId;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.eventDate = eventDate;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
+        this.contacts = contacts;
     }
 
     // example raw JSON body for postman API /createevent :: { "userId":22, "eventName":"Meeting", "eventDate":"2021-05-20" }
@@ -104,6 +112,14 @@ public class Event {
         this.eventEndTime = eventEndTime;
     }
 
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -111,9 +127,10 @@ public class Event {
                 ", userId=" + userId +
                 ", eventName='" + eventName + '\'' +
                 ", eventDescription='" + eventDescription + '\'' +
-                ", eventDate=" + eventDate +
-                ", eventStartTime=" + eventStartTime +
-                ", eventEndTime=" + eventEndTime +
+                ", eventDate='" + eventDate + '\'' +
+                ", eventStartTime='" + eventStartTime + '\'' +
+                ", eventEndTime='" + eventEndTime + '\'' +
+                ", contacts=" + contacts +
                 '}';
     }
 }
