@@ -1,4 +1,5 @@
 package com.cancerup.sqlaccesslayer.controller;
+import com.cancerup.sqlaccesslayer.CustomMapper;
 import com.cancerup.sqlaccesslayer.EventRepository;
 import com.cancerup.sqlaccesslayer.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,24 @@ public class EventController {
 
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private CustomMapper mapper;
 
     @RequestMapping(value="/createevent", method= RequestMethod.POST)
     public ResponseEntity<Void> createEvent(@RequestBody Event event)  {
         if ((!Objects.isNull(event.getUserId())) && (event.getEventName()!=null) ){ //If either of these two things are null it will fail
             eventRepository.save(event);
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+    }
+
+    @RequestMapping(value="/updateevent", method= RequestMethod.POST)
+    public ResponseEntity<Void> updateEvent(@RequestBody Event event)  {
+        Optional<Event> myEvent = eventRepository.findByEventId(event.getEventId()); // returning Optional<Event> think about this
+        if(myEvent.isPresent()){
+            mapper.updateEventFromDto(event, myEvent.get());
+            return ResponseEntity.status(HttpStatus.CREATED).body(null); // HttpStatus.UPDATED ? Is that a thing?
         }
         return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
     }
