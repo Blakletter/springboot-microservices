@@ -1,4 +1,4 @@
-// TODO :: fully implement contacts List , look into JSON URL , ...
+// TODO :: fully implement contacts List { test && table }, look into JSON URL , Event Location { test } , 
 package com.cancerup.sqlaccesslayer.models;
 
 import com.sun.istack.NotNull;
@@ -24,6 +24,8 @@ public class Event {
     private String eventStartTime;
     @Nullable
     private String eventEndTime;
+    @Nullable
+    private String location;
     @JoinTable // should be saved as EVENT_CONTACTS
     @OneToMany
     private List<Contact> contacts; // TODO {contacts} :: work on EVENT_CONTACT table.
@@ -35,6 +37,7 @@ public class Event {
                  String eventDate,
                  String eventStartTime,
                  String eventEndTime,
+                 String location,
                  List<Contact> contacts) {
         this.userId = userId;
         this.eventName = eventName;
@@ -42,6 +45,7 @@ public class Event {
         this.eventDate = eventDate;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
+        this.location = location;
         this.contacts = contacts;
     }
 
@@ -120,6 +124,14 @@ public class Event {
         this.contacts = contacts;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -130,6 +142,7 @@ public class Event {
                 ", eventDate='" + eventDate + '\'' +
                 ", eventStartTime='" + eventStartTime + '\'' +
                 ", eventEndTime='" + eventEndTime + '\'' +
+                ", location='" + location + '\'' +
                 ", contacts=" + contacts +
                 '}';
     }
