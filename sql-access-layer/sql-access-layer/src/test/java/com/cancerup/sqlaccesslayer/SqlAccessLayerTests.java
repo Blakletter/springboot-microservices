@@ -2,6 +2,7 @@ package com.cancerup.sqlaccesslayer;
 import com.cancerup.sqlaccesslayer.models.Contact;
 import com.cancerup.sqlaccesslayer.models.Event;
 import com.cancerup.sqlaccesslayer.models.User;
+import com.cancerup.sqlaccesslayer.models.Lead;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -46,6 +47,8 @@ public class SqlAccessLayerTests {
 	Event event = new Event(2, "Test", LocalDate.now().toString());
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
+	//This is our mock lead we are going to use
+	Lead lead = new Lead(22, "Lead", "James Smith", "222-333-4444", LocalDate.now().toString());
 
 
 	//CONTACT TESTS
@@ -172,5 +175,41 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isOk());
 	}
 
+	@Test
+	@Order(11)
+	public void testLeads() throws Exception {
+		String requestBody = new ObjectMapper().valueToTree(lead).toString();
+		this.mockMvc.perform(
+				post("/createlead")
+						.content(requestBody)
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isCreated());
+	}
+
+	@Test
+	@Order(12)
+	public void testFindLeads() throws Exception {
+		this.mockMvc.perform(
+				post("/requestleads")
+				.param("userId", Long.toString(lead.getUserId()))
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
+
+	@Test
+	@Order(13)
+	public void testDeleteLeads() throws Exception {
+		this.mockMvc.perform(
+				delete("/deletelead")
+						.param("leadId", Long.toString(lead.getUserId()))
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
 }
 
