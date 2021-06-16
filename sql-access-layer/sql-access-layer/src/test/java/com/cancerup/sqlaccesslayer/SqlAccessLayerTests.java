@@ -180,7 +180,7 @@ public class SqlAccessLayerTests {
 		String requestBody = new ObjectMapper().valueToTree(event2).toString();
 		this.mockMvc.perform(
 				post("/updateevent")
-						.param("eventId", Long.toString(15)) //event.getEventId()
+						.param("eventId", Long.toString(15)) // use a valid eventId from the DB, the mock tests above do not have correct id's to help update DB
 						.content(requestBody)
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
