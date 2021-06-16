@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "events")
 public class Event {
     @Id
-    private long eventId;
+    private Long eventId;
     @NotNull
     private long userId;
     @NotNull
@@ -48,11 +48,11 @@ public class Event {
 
     public Event(){ }
 
-    public long getEventId() {
+    public Long getEventId() {
         return eventId;
     }
 
-    public void setEventId(long eventId) {
+    public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
 
