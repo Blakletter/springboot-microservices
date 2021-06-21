@@ -44,6 +44,8 @@ public class SqlAccessLayerTests {
 	User user = new User("test@gmail.com", "password", "Test", "USER");
 	//This is our mock event we are going to use
 	Event event = new Event(2, "Test", LocalDate.now().toString());
+	//This is our second mock event we are going to use to test updating back and forth between events!
+	Event event2 = new Event(3, "Test2", LocalDate.now().toString());
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 
@@ -172,5 +174,18 @@ public class SqlAccessLayerTests {
 				.andDo(print()).andExpect(status().isOk());
 	}
 
+	@Test
+	@Order(11)
+	public void testUpdateEvents() throws Exception {
+		String requestBody = new ObjectMapper().valueToTree(event2).toString();
+		this.mockMvc.perform(
+				post("/updateevent")
+						.param("eventId", Long.toString(15)) // use a valid eventId from the DB, the mock tests above do not have correct id's to help update DB
+						.content(requestBody)
+						.contentType(MediaType.APPLICATION_JSON)
+						.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isCreated());
+	}
 }
 
