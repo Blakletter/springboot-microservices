@@ -108,6 +108,37 @@ LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `leads`
+--
+
+DROP Table IF EXISTS `leads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `leads` (
+  `leadId` int NOT NULL AUTO_INCREMENT,
+  `userId` int NOT NULL,
+  `type` varchar(10) NOT NULL DEFAULT 'lead',
+  `name` varchar(50) NOT NULL,
+  `phone` varchar(12) NOT NULL,
+  `date` varchar(20) NULL,
+  PRIMARY KEY (`leadId`),
+  FOREIGN KEY (`userId`)
+    REFERENCES `login`(`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leads`
+--
+
+LOCK TABLES `leads` WRITE;
+/*!40000 ALTER TABLE `leads` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leads` ENABLE KEYS */;
+UNLOCK TABLES;
+  
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
