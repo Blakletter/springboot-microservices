@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Table(name = "events")
 public class Event {
     @Id
+    @Column(name="event_id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long eventId;
     @NotNull
     private long userId;
@@ -22,19 +24,23 @@ public class Event {
     private String eventStartTime;
     @Nullable
     private String eventEndTime;
+    @Nullable
+    private String eventLocation;
 
     public Event(long userId,
                  String eventName,
                  String eventDescription,
                  String eventDate,
                  String eventStartTime,
-                 String eventEndTime) {
+                 String eventEndTime,
+                 String eventLocation) {
         this.userId = userId;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.eventDate = eventDate;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
+        this.eventLocation = eventLocation;
     }
 
     // example raw JSON body for postman API /createevent :: { "userId":22, "eventName":"Meeting", "eventDate":"2021-05-20" }
@@ -104,6 +110,14 @@ public class Event {
         this.eventEndTime = eventEndTime;
     }
 
+    public String getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(String eventLocation) {
+        this.eventLocation = eventLocation;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -111,9 +125,10 @@ public class Event {
                 ", userId=" + userId +
                 ", eventName='" + eventName + '\'' +
                 ", eventDescription='" + eventDescription + '\'' +
-                ", eventDate=" + eventDate +
-                ", eventStartTime=" + eventStartTime +
-                ", eventEndTime=" + eventEndTime +
+                ", eventDate='" + eventDate + '\'' +
+                ", eventStartTime='" + eventStartTime + '\'' +
+                ", eventEndTime='" + eventEndTime + '\'' +
+                ", eventLocation='" + eventLocation + '\'' +
                 '}';
     }
 }
