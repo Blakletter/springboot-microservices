@@ -2,6 +2,7 @@ package com.cancerup.sqlaccesslayer;
 import com.cancerup.sqlaccesslayer.models.Contact;
 import com.cancerup.sqlaccesslayer.models.Event;
 import com.cancerup.sqlaccesslayer.models.User;
+import com.cancerup.sqlaccesslayer.models.Lead;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -44,12 +45,12 @@ public class SqlAccessLayerTests {
 	User user = new User("test@gmail.com", "password", "Test", "USER");
 	//This is our mock event we are going to use
 	Event event = new Event(2, "Test", LocalDate.now().toString());
-	//This is our second mock event we are going to use to test updating back and forth between events!
-	Event event2 = new Event(3, "Test2", LocalDate.now().toString());
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 	//This is our second mock contact we are going to use to test updating back and forth between events!
 	Contact contact2 = new Contact(new User(44), "Barry", "Allen");
+	//This is our mock lead we are going to use
+	Lead lead = new Lead(44, "Lead", "James Smith", "222-333-4444", LocalDate.now().toString());
 
 
 	//CONTACT TESTS
@@ -178,11 +179,10 @@ public class SqlAccessLayerTests {
 
 	@Test
 	@Order(11)
-	public void testUpdateEvents() throws Exception {
-		String requestBody = new ObjectMapper().valueToTree(event2).toString();
+	public void testLeads() throws Exception {
+		String requestBody = new ObjectMapper().valueToTree(lead).toString();
 		this.mockMvc.perform(
-				post("/updateevent")
-						.param("eventId", Long.toString(16)) // use a valid eventId from the DB, the mock tests above do not have correct id's to help update DB
+				post("/createlead")
 						.content(requestBody)
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
@@ -192,16 +192,26 @@ public class SqlAccessLayerTests {
 
 	@Test
 	@Order(12)
-	public void testUpdateContacts() throws Exception {
-		String requestBody = new ObjectMapper().valueToTree(contact2).toString();
+	public void testFindLeads() throws Exception {
 		this.mockMvc.perform(
-				post("/updatecontact")
-						.param("contactId", Long.toString(18)) // use a valid eventId from the DB, the mock tests above do not have correct id's to help update DB
-						.content(requestBody)
+				post("/requestleads")
+				.param("userId", Long.toString(lead.getUserId()))
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON)
+		)
+				.andDo(print()).andExpect(status().isOk());
+	}
+
+	@Test
+	@Order(13)
+	public void testDeleteLeads() throws Exception {
+		this.mockMvc.perform(
+				delete("/deletelead")
+						.param("leadId", Long.toString(4))
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
 		)
-				.andDo(print()).andExpect(status().isCreated());
+				.andDo(print()).andExpect(status().isOk());
 	}
 }
 
