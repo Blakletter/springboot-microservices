@@ -205,7 +205,7 @@ public class SqlAccessLayerTests {
 	public void testDeleteLeads() throws Exception {
 		this.mockMvc.perform(
 				delete("/deletelead")
-						.param("leadId", Long.toString(lead.getLeadId()))
+						.param("leadId", Long.toString(4))
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
 		)

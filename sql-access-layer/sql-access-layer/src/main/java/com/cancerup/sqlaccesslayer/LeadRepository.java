@@ -14,5 +14,5 @@ public interface LeadRepository extends JpaRepository<Lead, Long> {
     Optional<List<Lead>> findAllByUserId(@Param("userId") long userId);
 
     @Transactional
-    long deleteByLeadId (long leadId);
+    long deleteByLeadId(@Param("leadId") long leadId);
 }

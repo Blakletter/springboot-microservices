@@ -32,11 +32,8 @@ public class LeadController {
     }
 
     @RequestMapping(value="/deletelead", method= RequestMethod.DELETE)
-    public ResponseEntity<Void> deleteLead(@RequestParam long leadId)  {
-
-        if (leadRepository.deleteByLeadId(leadId)>0) {
-            return ResponseEntity.status(HttpStatus.OK).body(null);
-        };
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+    public ResponseEntity<Long> deleteLead(@RequestParam long leadId)  {
+        long response = leadRepository.deleteByLeadId(leadId);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
