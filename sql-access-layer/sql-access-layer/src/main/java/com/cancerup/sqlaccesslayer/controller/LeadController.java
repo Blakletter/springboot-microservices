@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.cancerup.sqlaccesslayer.models.*;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,7 +18,7 @@ public class LeadController {
 
     @RequestMapping(value="/requestleads", method= RequestMethod.POST)
     public ResponseEntity<Optional> requestLeads(@RequestParam long userId ) {
-        Optional<List<Lead>> response = leadRepository.findByUserId(userId);
+        Optional<List<Lead>> response = leadRepository.findAllByUserId(userId);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 

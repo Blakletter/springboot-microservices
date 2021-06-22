@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface LeadRepository extends JpaRepository<Lead, Long> {
     @Query("select u from Lead where u.userId = :userId")
-    Optional<List<Lead>> findByUserId(@Param("userId") long userId);
+    Optional<List<Lead>> findAllByUserId(@Param("userId") long userId);
 
     @Transactional
     long deleteByLeadId (long leadId);
