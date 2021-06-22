@@ -2,6 +2,8 @@ package com.cancerup.sqlaccesslayer.controller;
 
 import com.cancerup.sqlaccesslayer.ContactRepository;
 import com.cancerup.sqlaccesslayer.models.*;
+import com.cancerup.sqlaccesslayer.util.CustomMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,10 @@ public class ContactController {
 
     @Autowired
     private ContactRepository contactRepository;
+    @Autowired
+    private CustomMapper mapper;
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @PostMapping("/createcontact")
     public ResponseEntity<Void> createContact(@RequestBody Contact contact)  {
@@ -44,6 +50,17 @@ public class ContactController {
     public ResponseEntity<Long> deleteContact(@RequestParam ("firstname") String firstName){
         long response = contactRepository.deleteByFirstName(firstName);
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @RequestMapping(value="/updatecontact", method= RequestMethod.POST)
+    public ResponseEntity<Optional> updateContact(@RequestBody Contact contact, @RequestParam long contactId)  {
+        Optional<Contact> myContact = contactRepository.findByContactId(contactId);
+        if(myContact.isPresent()){
+            mapper.updateContactFromDto(contact, myContact.get());
+            contactRepository.save(myContact.get());
+            return ResponseEntity.status(HttpStatus.CREATED).body(myContact);
+        }
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(null); // error 409
     }
 
 //    @PutMapping("/editcontact")

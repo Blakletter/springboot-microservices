@@ -9,7 +9,9 @@ import javax.persistence.*;
 @Table(name = "contacts")
 public class Contact {
     @Id
-    private long contactid;
+    @Column(name="contact_id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long contactId;
     @NotNull
     private String firstName;
     @NotNull
@@ -59,8 +61,8 @@ public class Contact {
 
     public Contact() {}
 
-    public long getContactid() {
-        return contactid;
+    public Long getContactId() {
+        return contactId;
     }
 
     public String getFirstName() {
@@ -103,11 +105,11 @@ public class Contact {
         return email;
     }
 
-    public void setContactid(long contactid) {
-        this.contactid = contactid;
+    public void setContactId(Long contactId) {
+        this.contactId = contactId;
     }
 
-    public void setFirst_name(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
