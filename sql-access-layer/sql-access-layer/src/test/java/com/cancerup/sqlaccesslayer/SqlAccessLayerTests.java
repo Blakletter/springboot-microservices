@@ -48,7 +48,7 @@ public class SqlAccessLayerTests {
 	//This is our global contact we are create/add. The user 44 is a test user (Mickey Mouse)
 	Contact contact = new Contact(new User(44), "Donald", "Duck");
 	//This is our mock lead we are going to use
-	Lead lead = new Lead(22, "Lead", "James Smith", "222-333-4444", LocalDate.now().toString());
+	Lead lead = new Lead(44, "Lead", "James Smith", "222-333-4444", LocalDate.now().toString());
 
 
 	//CONTACT TESTS
@@ -205,7 +205,7 @@ public class SqlAccessLayerTests {
 	public void testDeleteLeads() throws Exception {
 		this.mockMvc.perform(
 				delete("/deletelead")
-						.param("leadId", Long.toString(lead.getUserId()))
+						.param("leadId", Long.toString(lead.getLeadId()))
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
 		)

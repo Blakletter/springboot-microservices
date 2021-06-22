@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LeadRepository extends JpaRepository<Lead, Long> {
-    @Query("select u from Lead where u.userId = :userId")
+    @Query("select u from Lead u where u.userId = :userId")
     Optional<List<Lead>> findAllByUserId(@Param("userId") long userId);
 
     @Transactional
