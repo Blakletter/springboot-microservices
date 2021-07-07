@@ -4,7 +4,7 @@ import com.sun.istack.Nullable;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-
+// wow dude this was an adventure and an half hoo wee brother
 @Entity
 @Table(name = "leads")
 public class Lead {
