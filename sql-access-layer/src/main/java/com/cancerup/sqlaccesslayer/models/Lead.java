@@ -4,7 +4,7 @@ import com.sun.istack.Nullable;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-// wow dude this was an adventure and an half hoo wee brother
+
 @Entity
 @Table(name = "leads")
 public class Lead {
@@ -35,15 +35,15 @@ public class Lead {
         this.date = date;
     }
 
-    public Lead(long userId,
-                String name,
-                String date){
-        this.userId = userId;
-        this.name = name;
-        this.date = date;
+    public Lead() {}
+
+    public Long getLeadId() {
+        return leadId;
     }
 
-    public Lead() {}
+    public void setLeadId(Long leadId) {
+        this.leadId = leadId;
+    }
 
     public long getUserId() {
         return userId;

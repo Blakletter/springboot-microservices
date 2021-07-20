@@ -22,5 +22,6 @@ public interface CustomMapper {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateLeadFromDto(Lead dto, @MappingTarget Lead entity);
 
-  //void updateDataTypeFromDto(DataType dto, @MappingTarget DataType entity);   //Replace DataType with what you need, make sure to declare the Mapper object in your file.
+
+    //void updateDataTypeFromDto(DataType dto, @MappingTarget DataType entity);   //Replace DataType with what you need, make sure to declare the Mapper object in your file.
 }

@@ -52,9 +52,8 @@ public class SqlAccessLayerTests {
 	//This is our second mock contact we are going to use to test updating back and forth between events!
 	Contact contact2 = new Contact(new User(44), "Barry", "Allen");
 	//This is our mock lead we are going to use
-	Lead lead = new Lead(44, "James Smith", LocalDate.now().toString());
-	//Second mock lead
-	Lead lead2 = new Lead(44, "Quentin Tarantino",  LocalDate.now().toString());
+	Lead lead = new Lead(44, "Lead", "James Smith", "222-333-4444", LocalDate.now().toString());
+
 
 	//CONTACT TESTS
 	@Test
@@ -238,20 +237,6 @@ public class SqlAccessLayerTests {
 		this.mockMvc.perform(
 				post("/updatecontact")
 						.param("contactId", Long.toString(19))
-						.content(requestBody)
-						.contentType(MediaType.APPLICATION_JSON)
-						.accept(MediaType.APPLICATION_JSON)
-		)
-				.andDo(print()).andExpect(status().isCreated());
-	}
-
-	@Test
-	@Order(16)
-	public void updateLead() throws Exception {
-		String requestBody = new ObjectMapper().valueToTree(lead2).toString();
-		this.mockMvc.perform(
-				post("/updatelead")
-						.param("leadId", Long.toString(8))
 						.content(requestBody)
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON)
