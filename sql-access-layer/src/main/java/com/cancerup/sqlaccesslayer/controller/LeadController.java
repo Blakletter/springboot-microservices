@@ -41,13 +41,14 @@ public class LeadController {
     }
 
     @RequestMapping(value="/updatelead",method=RequestMethod.POST)
-    public ResponseEntity<Optional>updateLead(@RequestBody Lead lead, @RequestParam long leadId){
+    public ResponseEntity<Optional>updateLead(@RequestBody Lead lead,@RequestParam long leadId){
         Optional<Lead>myLead=leadRepository.findByLeadId(leadId);
         if(myLead.isPresent()){
             mapper.updateLeadFromDto(lead,myLead.get());
             leadRepository.save(myLead.get());
-            return  ResponseEntity.status(HttpStatus.CREATED).body(myLead);
+            return ResponseEntity.status(HttpStatus.CREATED).body(myLead);
         }
         return ResponseEntity.status(HttpStatus.CONFLICT).body(null);//error409
     }
+
 }
